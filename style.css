@@ -1,464 +1,256 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: #0a0a0a;
-    color: #ffffff;
-    line-height: 1.6;
-}
-
-/* Navigation */
-header {
-    padding: 1.2rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    background: rgba(10, 10, 10, 0.95);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.3rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
-
-.nav-links a {
-    color: #a0a0a0;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    letter-spacing: 0.3px;
-}
-
-.nav-links a:hover {
-    color: #ffffff;
-}
-
-/* Hero Section */
-.hero {
-    padding: 4rem 5%;
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.hero-left h1 {
-    font-size: 3.8rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: 0.3rem;
-}
-
-.hero-left h1 .highlight {
-    background: linear-gradient(135deg, #ffffff, #a0a0a0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-left h2 {
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #6366f1;
-    margin-bottom: 1.2rem;
-}
-
-.hero-description {
-    color: #d0d0d0;
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    line-height: 1.7;
-}
-
-.hero-detail {
-    color: #888888;
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.btn-primary,
-.btn-secondary {
-    padding: 0.8rem 2.2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
-}
-
-.btn-secondary {
-    border: 2px solid #6366f1;
-    color: white;
-    background: transparent;
-}
-
-.btn-secondary:hover {
-    background: rgba(99, 102, 241, 0.1);
-    transform: translateY(-2px);
-}
-
-.hero-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profile-card {
-    width: 380px;
-    height: 380px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid rgba(99, 102, 241, 0.3);
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.1);
-    transition: all 0.3s ease;
-}
-
-.profile-card:hover {
-    border-color: #6366f1;
-    box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2);
-}
-
-.profile-image i {
-    font-size: 12rem;
-    color: #6366f1;
-    opacity: 0.8;
-}
-
-/* Stats Section */
-.stats {
-    padding: 3rem 5%;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.stats-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.stat-item {
-    text-align: center;
-}
-
-.stat-number {
-    display: block;
-    font-size: 3.8rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -1px;
-}
-
-.stat-label {
-    color: #888888;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-    margin-top: 0.2rem;
-    display: block;
-}
-
-/* Portfolio Section */
-.portfolio {
-    padding: 5rem 5%;
-}
-
-.portfolio-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.section-header {
-    text-align: center;
-    margin-bottom: 3.5rem;
-}
-
-.section-header h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #ffffff, #a0a0a0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.section-header p {
-    color: #888888;
-    font-size: 1.1rem;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.portfolio-card {
-    background: #121212;
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-.card-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.2rem;
-    border: 1px solid rgba(99, 102, 241, 0.2);
-}
-
-.card-icon i {
-    font-size: 1.8rem;
-    color: #8b5cf6;
-}
-
-.portfolio-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.portfolio-card p {
-    color: #888888;
-    font-size: 0.95rem;
-}
-
-/* Footer */
-footer {
-    background: #0d0d0d;
-    padding: 3rem 5% 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.footer-info h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-}
-
-.footer-title {
-    color: #6366f1;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-}
-
-.footer-contact {
-    color: #888888;
-    font-size: 0.9rem;
-    margin: 0.4rem 0;
-}
-
-.footer-contact i {
-    width: 20px;
-    color: #6366f1;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1.2rem;
-    padding-top: 0.5rem;
-}
-
-.social-link {
-    color: #888888;
-    font-size: 1.3rem;
-    transition: all 0.3s ease;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.social-link:hover {
-    color: #6366f1;
-    border-color: #6366f1;
-    transform: translateY(-3px);
-    background: rgba(99, 102, 241, 0.1);
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 1.5rem;
-    color: #555555;
-    font-size: 0.85rem;
-}
-
-/* Responsive Design */
-@media (max-width: 968px) {
-    .hero-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-left h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-left h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .profile-card {
-        width: 280px;
-        height: 280px;
-    }
-
-    .profile-image i {
-        font-size: 8rem;
-    }
-
-    .stats-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-social {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .nav-links {
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-links a {
-        font-size: 0.8rem;
-    }
-
-    .hero-left h1 {
-        font-size: 2.2rem;
-    }
-
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
-    .profile-card {
-        width: 220px;
-        height: 220px;
-    }
-
-    .profile-image i {
-        font-size: 6rem;
-    }
-
-    .stat-number {
-        font-size: 2.8rem;
-    }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhinav Jaiswal - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Digital Identity</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>
+                    I'm <span class="highlight">Abhinav Jaiswal</span>,<br />
+                    a Software Engineer based in <span class="highlight">Bangalore, India</span>.
+                </h1>
+                <p class="hero-text">
+                    Passionate about programming, web development, and building
+                    scalable solutions to solve real-world problems.
+                </p>
+                <p class="hero-text secondary">
+                    I hold a postgraduate degree from the National Institute of
+                    Technology, Tiruchirappalli, and have worked at Amazon as a
+                    Software Development Engineer (SDE) since 2018. My passion
+                    for continuous learning drives me to stay up-to-date with
+                    the latest technologies and frameworks in the industry.
+                </p>
+            </div>
+            <div class="hero-sidebar">
+                <div class="profile-card">
+                    <h3>Abhinav Jaiswal</h3>
+                    <p class="profile-title">Software Developer</p>
+                    <div class="profile-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>hello@abhinav.me</span>
+                    </div>
+                    <div class="profile-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Bangalore, IN</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stats-header">
+                <h2>Highlights & Successes</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">+8</span>
+                    <span class="stat-label">YEARS OF EXPERIENCE</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+25</span>
+                    <span class="stat-label">PROJECTS COMPLETED</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">+10</span>
+                    <span class="stat-label">CERTIFICATIONS & AWARDS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="portfolio-container">
+            <div class="section-header">
+                <h2>Featured Portfolios</h2>
+                <p>A glimpse into my professional journey.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>E-Commerce Platform</h3>
+                    <p>Full-stack development with React & Node.js</p>
+                    <a href="#" class="view-project">View Project →</a>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Migration</h3>
+                    <p>AWS cloud architecture and deployment</p>
+                    <a href="#" class="view-project">View Project →</a>
+                </div>
+                <div class="portfolio-card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Chatbot</h3>
+                    <p>Machine learning powered customer support</p>
+                    <a href="#" class="view-project">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2>Digital Identity</h2>
+                    <p>Abhinav Jaiswal - Portfolio</p>
+                </div>
+                <div class="footer-social">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://twitter.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://dev.to/yourusername" target="_blank" class="social-link">
+                        <i class="fab fa-dev"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Digital Identity. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Resume Modal -->
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>My Resume</h2>
+            <div class="resume-content">
+                <div class="resume-section">
+                    <h3>Work Experience</h3>
+                    <div class="resume-item">
+                        <h4>Software Development Engineer</h4>
+                        <p class="company">Amazon | 2018 - Present</p>
+                        <ul>
+                            <li>Built scalable microservices handling millions of requests</li>
+                            <li>Led team of 5 engineers on critical projects</li>
+                            <li>Reduced system latency by 40%</li>
+                        </ul>
+                    </div>
+                    <div class="resume-item">
+                        <h4>Software Engineer Intern</h4>
+                        <p class="company">Google | 2017</p>
+                        <ul>
+                            <li>Developed internal tools for team productivity</li>
+                            <li>Implemented API integrations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-section">
+                    <h3>Education</h3>
+                    <div class="resume-item">
+                        <h4>M.Tech in Computer Science</h4>
+                        <p class="company">NIT Tiruchirappalli | 2016 - 2018</p>
+                    </div>
+                    <div class="resume-item">
+                        <h4>B.Tech in Computer Science</h4>
+                        <p class="company">NIT Allahabad | 2012 - 2016</p>
+                    </div>
+                </div>
+                <div class="resume-section">
+                    <h3>Skills</h3>
+                    <div class="skills-tags">
+                        <span>JavaScript</span>
+                        <span>Python</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>MongoDB</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="download-resume" download>Download Resume (PDF)</a>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@abhinav.me</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bangalore, India</p>
+                        </div>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form">
+                    <input type="text" placeholder="Your Name" required />
+                    <input type="email" placeholder="Your Email" required />
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
