@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Identity - Your Name</title>
+    <title>Digital Identity</title>
     <link rel="stylesheet" href="style.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet"
     />
     <link
@@ -15,108 +15,129 @@
     />
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Digital Identity</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">Digital Identity</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>I'm Your Name</h1>
+        <div class="hero-container">
+            <div class="hero-left">
+                <h1>I'm <span class="highlight">Abhinav Jaiswal</span></h1>
                 <h2>Software Developer</h2>
-                <p>
+                <p class="hero-description">
                     Passionate about programming, web development, and building
                     scalable solutions to solve real-world problems.
                 </p>
-                <p>
+                <p class="hero-detail">
                     I hold a postgraduate degree from the National Institute of
-                    Technology, and have worked at Amazon as a
-                    Software Development Engineer (SDE) since 2018.
+                    Technology, Tiruchirappalli, and have worked at Amazon as a
+                    Software Development Engineer (SDE) since 2018. My passion
+                    for continuous learning drives me to stay up-to-date with
+                    the latest technologies and frameworks in the industry.
                 </p>
                 <div class="hero-buttons">
                     <a href="#" class="btn-primary">View Resume</a>
                     <a href="#" class="btn-secondary">Contact Me</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="profile-placeholder">
-                    <i class="fas fa-user-circle"></i>
+            <div class="hero-right">
+                <div class="profile-card">
+                    <div class="profile-image">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Stats Section -->
     <section class="stats">
-        <div class="stat-item">
-            <span class="stat-number">+8</span>
-            <span class="stat-label">YEARS OF EXPERIENCE</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">+25</span>
-            <span class="stat-label">PROJECTS COMPLETED</span>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">+10</span>
-            <span class="stat-label">CERTIFICATIONS & AWARDS</span>
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number">+8</span>
+                <span class="stat-label">YEARS OF EXPERIENCE</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+25</span>
+                <span class="stat-label">PROJECTS COMPLETED</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">+10</span>
+                <span class="stat-label">CERTIFICATIONS & AWARDS</span>
+            </div>
         </div>
     </section>
 
+    <!-- Featured Portfolios Section -->
     <section class="portfolio">
-        <div class="section-header">
-            <h2>Featured Portfolios</h2>
-            <p>A glimpse into my professional journey.</p>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                <div class="card-image">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>Project 1</h3>
-                <p>Web Development</p>
+        <div class="portfolio-container">
+            <div class="section-header">
+                <h2>Featured Portfolios</h2>
+                <p>A glimpse into my professional journey.</p>
             </div>
-            <div class="portfolio-card">
-                <div class="card-image">
-                    <i class="fas fa-server"></i>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack applications with modern frameworks</p>
                 </div>
-                <h3>Project 2</h3>
-                <p>Backend Systems</p>
-            </div>
-            <div class="portfolio-card">
-                <div class="card-image">
-                    <i class="fas fa-cloud"></i>
+                <div class="portfolio-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Scalable cloud-native architectures</p>
                 </div>
-                <h3>Project 3</h3>
-                <p>Cloud Solutions</p>
+                <div class="portfolio-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>AI & ML</h3>
+                    <p>Intelligent systems and automation</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Your Name</h3>
-                <p>Software Developer</p>
-                <p><i class="fas fa-envelope"></i> your@email.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Your City</p>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-info">
+                    <h3>Abhinav Jaiswal</h3>
+                    <p class="footer-title">Software Developer</p>
+                    <p class="footer-contact">
+                        <i class="fas fa-envelope"></i> hello@abhinav.me
+                    </p>
+                    <p class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i> Bangalore, IN
+                    </p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-dev"></i></a>
+                </div>
             </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-dev"></i></a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Digital Identity. All rights reserved.</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Digital Identity. All rights reserved.</p>
         </div>
     </footer>
 </body>
