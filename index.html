@@ -57,11 +57,20 @@
         <main class="main-content">
             <!-- Navigation -->
             <nav class="navbar">
-                <button class="nav-btn active" onclick="switchTab('about', this)">About</button>
-                <button class="nav-btn" onclick="switchTab('resume', this)">Resume</button>
-                <button class="nav-btn" onclick="switchTab('portfolio', this)">Portfolio</button>
-                <button class="nav-btn" onclick="switchTab('contact', this)">Contact</button>
-                <button class="nav-btn" onclick="switchTab('gallery', this)">Gallery</button>
+                <!-- Mobile Dropdown Toggle Button -->
+                <button class="nav-toggle-btn" onclick="toggleDropdown()">
+                    <span id="current-tab-label">Menu</span>
+                    <i class="fa-solid fa-chevron-down" id="dropdown-icon"></i>
+                </button>
+
+                <!-- Navigation Links Container -->
+                <div class="nav-links" id="navLinks">
+                    <button class="nav-btn active" onclick="switchTab('about', this)">About</button>
+                    <button class="nav-btn" onclick="switchTab('resume', this)">Resume</button>
+                    <button class="nav-btn" onclick="switchTab('portfolio', this)">Portfolio</button>
+                    <button class="nav-btn" onclick="switchTab('contact', this)">Contact</button>
+                    <button class="nav-btn" onclick="switchTab('gallery', this)">Gallery</button>
+                </div>
             </nav>
 
             <!-- About Tab -->
@@ -204,6 +213,25 @@
 
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
+
+            // Update mobile dropdown label and close menu when clicked
+            if (window.innerWidth <= 900) {
+                document.getElementById('current-tab-label').innerText = btn.innerText;
+                document.getElementById('navLinks').classList.remove('show-dropdown');
+                document.getElementById('dropdown-icon').style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function toggleDropdown() {
+            const navLinks = document.getElementById('navLinks');
+            const icon = document.getElementById('dropdown-icon');
+            navLinks.classList.toggle('show-dropdown');
+            
+            if (navLinks.classList.contains('show-dropdown')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
         }
     </script>
 </body>
