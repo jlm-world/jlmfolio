@@ -9,64 +9,12 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-
-
-        /* Modal Popup Styles */
-    .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(5px);
-        z-index: 2000;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-    }
-    .modal-overlay.active {
-        display: flex;
-    }
-    .modal-box {
-        background-color: #1a1a1e;
-        border: 1px solid #2a2a30;
-        border-radius: 16px;
-        padding: 2rem;
-        width: 100%;
-        max-width: 500px;
-        position: relative;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-    }
-    .modal-close {
-        position: absolute;
-        top: 1.2rem; right: 1.2rem;
-        background: #23232a;
-        border: 1px solid #2a2a30;
-        color: #94a3b8;
-        width: 32px; height: 32px;
-        border-radius: 8px;
-        cursor: pointer;
-        display: flex; justify-content: center; align-items: center;
-        transition: 0.3s;
-    }
-    .modal-close:hover { color: #fff; background-color: #22d3ee; border-color: #22d3ee; }
-    .modal-title { font-size: 1.3rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem; }
-    .modal-subtitle { font-size: 0.9rem; color: #22d3ee; margin-bottom: 1.5rem; font-weight: 600; }
-    .modal-body { display: flex; flex-direction: column; gap: 1rem; color: #94a3b8; font-size: 0.9rem; }
-    .modal-detail-row { display: flex; justify-content: space-between; border-bottom: 1px solid #2a2a30; padding-bottom: 0.6rem; }
-    .modal-detail-label { color: #64748b; text-transform: uppercase; font-size: 0.75rem; font-weight: 600; }
-    .modal-detail-value { color: #e2e8f0; font-weight: 500; }
-    
-    /* Make timeline cards look clickable */
-    .timeline-card { cursor: pointer; transition: 0.3s border-color, 0.3s transform; }
-    .timeline-card:hover { border-color: #22d3ee; transform: translateY(-2px); }
-
-        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
         body { background-color: #121214; color: #e2e8f0; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 2rem 1rem; }
-        .container { max-width: 1200px; width: 100%; display: grid; grid-template-columns: 300px 1fr; gap: 2rem; }
+        .container { max-width: 1200px; width: 100%; display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; }
         
         /* Sidebar Styles */
-        .sidebar { background-color: #1a1a1e; border: 1px solid #2a2a30; border-radius: 20px; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; height: fit-content; position: sticky; top: 2rem; position: relative; }
+        .sidebar { background-color: #1a1a1e; border: 1px solid #2a2a30; border-radius: 20px; padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; height: fit-content; position: sticky; top: 2rem; }
         .nav-toggle-btn { display: none; background: #23232a; border: 1px solid #2a2a30; color: #22d3ee; width: 36px; height: 36px; border-radius: 10px; cursor: pointer; justify-content: center; align-items: center; position: absolute; top: 1.2rem; right: 1.2rem; transition: 0.3s; }
         .profile-img { width: 130px; height: 130px; border-radius: 16px; object-fit: cover; margin-bottom: 1.2rem; border: 2px solid #2a2a30; }
         .name { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 0.5rem; }
@@ -84,7 +32,7 @@
         .social-links a:hover { color: #ffffff; background-color: #22d3ee; }
 
         /* Main Content Styles */
-        .main-content { background-color: #1a1a1e; border: 1px solid #2a2a30; border-radius: 20px; padding: 2rem; }
+        .main-content { background-color: #1a1a1e; border: 1px solid #2a2a30; border-radius: 20px; padding: 2rem; width: 100%; overflow: hidden; }
         .navbar { display: flex; justify-content: flex-end; gap: 1.5rem; border-bottom: 1px solid #2a2a30; padding-bottom: 1rem; margin-bottom: 2rem; }
         .nav-btn { background: none; border: none; color: #94a3b8; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: 0.3s; padding-bottom: 0.3rem; }
         .nav-btn:hover, .nav-btn.active { color: #22d3ee; border-bottom: 2px solid #22d3ee; }
@@ -99,7 +47,7 @@
         .stat-number { font-size: 1.8rem; font-weight: 700; color: #ffffff; }
         .stat-label { font-size: 0.75rem; color: #64748b; font-weight: 600; text-transform: uppercase; margin-top: 0.3rem; }
 
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem; }
         .project-card { background-color: #23232a; border: 1px solid #2a2a30; border-radius: 14px; overflow: hidden; transition: transform 0.3s ease; }
         .project-card:hover { transform: translateY(-5px); }
         .project-img { width: 100%; height: 140px; background-color: #2a2a30; object-fit: cover; }
@@ -123,14 +71,56 @@
         .timeline-item { position: relative; margin-bottom: 1.5rem; }
         .timeline-dot { position: absolute; left: -2rem; top: 1.5rem; width: 12px; height: 12px; background: #1a1a1e; border: 2px solid #22d3ee; border-radius: 50%; transform: translateX(-50%); z-index: 2; }
 
-        .timeline-card { background-color: #1f1f26; border: 1px solid #2a2a30; border-radius: 12px; padding: 1.5rem; position: relative; }
+        .timeline-card { background-color: #1f1f26; border: 1px solid #2a2a30; border-radius: 12px; padding: 1.5rem; position: relative; cursor: pointer; transition: 0.3s border-color, 0.3s transform; }
+        .timeline-card:hover { border-color: #22d3ee; transform: translateY(-2px); }
         .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.4rem; gap: 1rem; }
         .timeline-title { color: #ffffff; font-size: 1.15rem; font-weight: 600; font-family: serif; letter-spacing: 0.3px; }
         .timeline-date { color: #ffffff; font-size: 0.85rem; font-weight: 600; white-space: nowrap; }
 
         .timeline-institution { color: #94a3b8; font-size: 0.9rem; margin-bottom: 1rem; }
-        .timeline-tag { display: inline-block; background-color: rgba(34, 211, 238, 0.1); color: #22d3ee; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem; }
-        .timeline-desc { color: #94a3b8; font-size: 0.85rem; line-height: 1.5; font-style: italic; }
+
+        /* Modal Popup Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .modal-overlay.active { display: flex; }
+        .modal-box {
+            background-color: #1a1a1e;
+            border: 1px solid #2a2a30;
+            border-radius: 16px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+        }
+        .modal-close {
+            position: absolute;
+            top: 1.2rem; right: 1.2rem;
+            background: #23232a;
+            border: 1px solid #2a2a30;
+            color: #94a3b8;
+            width: 32px; height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex; justify-content: center; align-items: center;
+            transition: 0.3s;
+        }
+        .modal-close:hover { color: #fff; background-color: #22d3ee; border-color: #22d3ee; }
+        .modal-title { font-size: 1.3rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem; }
+        .modal-subtitle { font-size: 0.9rem; color: #22d3ee; margin-bottom: 1.5rem; font-weight: 600; }
+        .modal-body { display: flex; flex-direction: column; gap: 1rem; color: #94a3b8; font-size: 0.9rem; }
+        .modal-detail-row { display: flex; justify-content: space-between; border-bottom: 1px solid #2a2a30; padding-bottom: 0.6rem; }
+        .modal-detail-label { color: #64748b; text-transform: uppercase; font-size: 0.75rem; font-weight: 600; }
+        .modal-detail-value { color: #e2e8f0; font-weight: 500; }
 
         /* Responsive Mobile Layout & Collapsibles */
         @media (max-width: 900px) {
@@ -214,7 +204,7 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <!-- Navigation Links (Acts as desktop header & mobile floating bar) -->
+            <!-- Navigation Links -->
             <nav class="navbar show-dropdown" id="navLinks">
                 <button class="nav-btn active" onclick="switchTab('about', this)">About</button>
                 <button class="nav-btn" onclick="switchTab('resume', this)">Resume</button>
@@ -238,7 +228,7 @@
             <section id="resume" class="tab-content">
                 <h2 class="section-title">Resume & Skills</h2>
                 
-                <h3 class="resume-category-title" style="color: #fff; margin-bottom: 1.5rem; font-size: 1.25rem;"><i class="fa-solid fa-code"></i> Skills & Tools</h3>
+                <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.25rem;"><i class="fa-solid fa-code"></i> Skills & Tools</h3>
                 <div style="margin-bottom: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: #fff;"><span>Web Technology</span><span>90%</span></div>
                     <div style="background: #2a2a2a; height: 8px; border-radius: 4px; overflow: hidden;"><div style="background: #22d3ee; width: 90%; height: 100%;"></div></div>
@@ -250,38 +240,35 @@
 
                 <!-- Educational Journey Timeline Section -->
                 <h2 class="section-title" style="margin-top: 2.5rem; font-size: 1.6rem; border-top: 1px solid #2a2a30; padding-top: 2rem;">Educational Journey</h2>
-                <p class="section-desc" style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">My academic path and educational achievements that shaped my technical foundation.</p>
+                <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">My academic path and educational achievements that shaped my technical foundation.</p>
 
-                
-            <div class="timeline-wrapper">
-        <!-- BSc Card (Clean View) -->
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card" onclick="openModal('bsc-modal')">
-                <div class="timeline-header">
-                    <div class="timeline-title">Bachelor of Science in Computer Science</div>
-                    <div class="timeline-date">2024 — 2027</div>
+                <div class="timeline-wrapper">
+                    <!-- BSc Card -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal('bsc-modal')">
+                            <div class="timeline-header">
+                                <div class="timeline-title">Bachelor of Science in Computer Science</div>
+                                <div class="timeline-date">2024 — 2027</div>
+                            </div>
+                            <div class="timeline-institution" style="margin-bottom: 0;">IIT Patna (Online)</div>
+                        </div>
+                    </div>
+
+                    <!-- BA Card -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card" onclick="openModal('ba-modal')">
+                            <div class="timeline-header">
+                                <div class="timeline-title">Bachelor of Arts in English</div>
+                                <div class="timeline-date">2024 — 2027</div>
+                            </div>
+                            <div class="timeline-institution" style="margin-bottom: 0;">Andhra University (Online)</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="timeline-institution" style="margin-bottom: 0;">IIT Patna (Online)</div>
-            </div>
-        </div>
+            </section>
 
-        <!-- BA Card (Clean View) -->
-        <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-card" onclick="openModal('ba-modal')">
-                <div class="timeline-header">
-                    <div class="timeline-title">Bachelor of Arts in English</div>
-                    <div class="timeline-date">2024 — 2027</div>
-                </div>
-                <div class="timeline-institution" style="margin-bottom: 0;">Andhra University (Online)</div>
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
-
-            
             <!-- Portfolio Tab -->
             <section id="portfolio" class="tab-content">
                 <h2 class="section-title">Creative Showcase</h2>
@@ -336,6 +323,52 @@
         </main>
     </div>
 
+    <!-- BSc Modal Window -->
+    <div class="modal-overlay" id="bsc-modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('bsc-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title">B.Sc. Computer Science</div>
+            <div class="modal-subtitle">IIT Patna (Online)</div>
+            <div class="modal-body">
+                <div class="modal-detail-row">
+                    <span class="modal-detail-label">Duration</span>
+                    <span class="modal-detail-value">2024 — 2027</span>
+                </div>
+                <div class="modal-detail-row">
+                    <span class="modal-detail-label">Status</span>
+                    <span class="modal-detail-value">Current</span>
+                </div>
+                <div style="margin-top: 0.5rem;">
+                    <strong style="color: #fff; font-size: 0.85rem; text-transform: uppercase;">Subjects & Details:</strong>
+                    <p style="margin-top: 0.3rem;">Core Computer Science Engineering curriculum, algorithms, and software development.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BA Modal Window -->
+    <div class="modal-overlay" id="ba-modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal('ba-modal')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-title">B.A. English</div>
+            <div class="modal-subtitle">Andhra University (Online)</div>
+            <div class="modal-body">
+                <div class="modal-detail-row">
+                    <span class="modal-detail-label">Duration</span>
+                    <span class="modal-detail-value">2024 — 2027</span>
+                </div>
+                <div class="modal-detail-row">
+                    <span class="modal-detail-label">Status</span>
+                    <span class="modal-detail-value">Current</span>
+                </div>
+                <div style="margin-top: 0.5rem;">
+                    <strong style="color: #fff; font-size: 0.85rem; text-transform: uppercase;">Subjects & Details:</strong>
+                    <p style="margin-top: 0.3rem;">English Literature, professional communication, and language studies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
@@ -357,67 +390,19 @@
             }
         }
 
-    function openModal(modalId) {
-        document.getElementById(modalId).classList.add('active');
-    }
-
-    function closeModal(modalId) {
-        document.getElementById(modalId).classList.remove('active');
-    }
-
-    // Close modal when clicking outside the box
-    window.onclick = function(event) {
-        if (event.target.classList.contains('modal-overlay')) {
-            event.target.classList.remove('active');
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
         }
-    }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
     </script>
-
-    <!-- BSc Modal Window -->
-<div class="modal-overlay" id="bsc-modal">
-    <div class="modal-box">
-        <button class="modal-close" onclick="closeModal('bsc-modal')"><i class="fa-solid fa-xmark"></i></button>
-        <div class="modal-title">B.Sc. Computer Science</div>
-        <div class="modal-subtitle">IIT Patna (Online)</div>
-        <div class="modal-body">
-            <div class="modal-detail-row">
-                <span class="modal-detail-label">Duration</span>
-                <span class="modal-detail-value">2024 — 2027</span>
-            </div>
-            <div class="modal-detail-row">
-                <span class="modal-detail-label">Status</span>
-                <span class="modal-detail-value">Current</span>
-            </div>
-            <div style="margin-top: 0.5rem;">
-                <strong style="color: #fff; font-size: 0.85rem; text-transform: uppercase;">Subjects & Details:</strong>
-                <p style="margin-top: 0.3rem;">Core Computer Science Engineering curriculum, algorithms, and software development.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- BA Modal Window -->
-<div class="modal-overlay" id="ba-modal">
-    <div class="modal-box">
-        <button class="modal-close" onclick="closeModal('ba-modal')"><i class="fa-solid fa-xmark"></i></button>
-        <div class="modal-title">B.A. English</div>
-        <div class="modal-subtitle">Andhra University (Online)</div>
-        <div class="modal-body">
-            <div class="modal-detail-row">
-                <span class="modal-detail-label">Duration</span>
-                <span class="modal-detail-value">2024 — 2027</span>
-            </div>
-            <div class="modal-detail-row">
-                <span class="modal-detail-label">Status</span>
-                <span class="modal-detail-value">Current</span>
-            </div>
-            <div style="margin-top: 0.5rem;">
-                <strong style="color: #fff; font-size: 0.85rem; text-transform: uppercase;">Subjects & Details:</strong>
-                <p style="margin-top: 0.3rem;">English Literature, professional communication, and language studies.</p>
-            </div>
-        </div>
-    </div>
-</div>
-    
 </body>
 </html>
