@@ -234,16 +234,53 @@
             <section id="resume" class="tab-content">
                 <h2 class="section-title">Resume & Skills</h2>
                 
-                <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.25rem;"><i class="fa-solid fa-code"></i> Skills & Tools</h3>
-                <div style="margin-bottom: 1.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: #fff;"><span>Web Technology</span><span>90%</span></div>
-                    <div style="background: #2a2a2a; height: 8px; border-radius: 4px; overflow: hidden;"><div style="background: #22d3ee; width: 90%; height: 100%;"></div></div>
-                </div>
-                <div style="margin-bottom: 2.5rem;">
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; color: #fff;"><span>API Development</span><span>85%</span></div>
-                    <div style="background: #2a2a2a; height: 8px; border-radius: 4px; overflow: hidden;"><div style="background: #22d3ee; width: 85%; height: 100%;"></div></div>
-                </div>
+                <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-code" style="color: #22d3ee;"></i> Skills & Tools</h3>
+                
+                <!-- Categorized Skills Layout -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 1rem;">
+                    
+                    <!-- Category Row: Programming -->
+                    <div style="display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: 1rem; border-bottom: 1px solid #2a2a30; padding-bottom: 1.2rem;">
+                        <div style="color: #94a3b8; font-style: italic; font-size: 0.95rem; font-weight: 500;">Programming</div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">Python</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">JavaScript</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">C++</span>
+                        </div>
+                    </div>
 
+                    <!-- Category Row: Web & Backend -->
+                    <div style="display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: 1rem; border-bottom: 1px solid #2a2a30; padding-bottom: 1.2rem;">
+                        <div style="color: #94a3b8; font-style: italic; font-size: 0.95rem; font-weight: 500;">Web & Backend</div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">React.js</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">Node.js</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">FastAPI</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Category Row: Cloud & Deployment -->
+                    <div style="display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: 1rem; border-bottom: 1px solid #2a2a30; padding-bottom: 1.2rem;">
+                        <div style="color: #94a3b8; font-style: italic; font-size: 0.95rem; font-weight: 500;">Cloud & Deployment</div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">AWS</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">Docker</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">Linux</span>
+                        </div>
+                    </div>
+
+                    <!-- Category Row: Databases -->
+                    <div style="display: grid; grid-template-columns: 180px 1fr; align-items: center; gap: 1rem; padding-bottom: 0.5rem;">
+                        <div style="color: #94a3b8; font-style: italic; font-size: 0.95rem; font-weight: 500;">Databases</div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">PostgreSQL</span>
+                            <span style="background-color: #23232a; border: 1px solid #2a2a30; color: #e2e8f0; padding: 0.35rem 0.8rem; border-radius: 8px; font-size: 0.85rem; font-weight: 500;">MongoDB</span>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
                 <!-- Educational Journey Timeline Section -->
                 <h2 class="section-title" style="margin-top: 2.5rem; font-size: 1.6rem; border-top: 1px solid #2a2a30; padding-top: 2rem;">Educational Journey</h2>
                 <p style="color: #94a3b8; margin-bottom: 1.5rem; font-size: 0.9rem;">My academic path and educational achievements that shaped my technical foundation.</p>
