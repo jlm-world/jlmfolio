@@ -16,6 +16,11 @@
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
+            <!-- Mobile Dropdown Toggle Button -->
+            <button class="nav-toggle-btn" onclick="toggleDropdown()">
+                <i class="fa-solid fa-chevron-down" id="dropdown-icon"></i>
+            </button>
+
             <img src="https://via.placeholder.com/130" alt="Profile" class="profile-img">
             <h1 class="name">John Lawrence Missal</h1>
             <span class="role-badge">Cloud Practioner</span>
@@ -55,8 +60,8 @@
 
         <!-- Main Content Area -->
         <main class="main-content">
-            <!-- Navigation -->
-            <nav class="navbar">
+            <!-- Navigation Links -->
+            <nav class="navbar" id="navLinks">
                 <button class="nav-btn active" onclick="switchTab('about', this)">About</button>
                 <button class="nav-btn" onclick="switchTab('resume', this)">Resume</button>
                 <button class="nav-btn" onclick="switchTab('portfolio', this)">Portfolio</button>
@@ -204,6 +209,24 @@
 
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
+
+            // Close mobile dropdown menu when a tab is chosen
+            if (window.innerWidth <= 900) {
+                document.getElementById('navLinks').classList.remove('show-dropdown');
+                document.getElementById('dropdown-icon').style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function toggleDropdown() {
+            const navLinks = document.getElementById('navLinks');
+            const icon = document.getElementById('dropdown-icon');
+            navLinks.classList.toggle('show-dropdown');
+            
+            if (navLinks.classList.contains('show-dropdown')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
         }
     </script>
 </body>
