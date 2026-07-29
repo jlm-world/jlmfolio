@@ -7,7 +7,8 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Neutra-style Geometric Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -15,26 +16,33 @@
 
     <div class="container">
         
+        
         <!-- Sidebar -->
         <aside class="sidebar">
             <button class="nav-toggle-btn" onclick="toggleSidebarDropdown()">
                 <i class="fa-solid fa-chevron-down" id="dropdown-icon"></i>
             </button>
 
-            <img src="https://via.placeholder.com/130" alt="Profile" class="profile-img">
-            <h1 class="name">John Lawrence Missal</h1>
-            <span class="role-badge">Cloud Practitioner</span>
+            <img src="jlm.png" alt="Profile" class="profile-img">
+
+            <!-- Wrapped together so role badge stays under your name -->
+            <div class="profile-text-info">
+                <h1 class="name">John Lawrence Missal</h1>
+                <span class="role-badge">Cloud Practitioner</span>
+            </div>
 
             <div class="divider"></div>
 
             <div class="collapse-content" id="sidebarCollapse">
+                <!-- Email, Resume, Social links go here -->
+               <!-- Your email, resume, and social links are inside here -->
                 <div class="info-list">
                     <div class="info-item">
                         <div class="info-icon"><i class="fa-regular fa-envelope"></i></div>
                         <div>
                             <div class="info-label">Email</div>
                             <div class="info-value">
-                                <a href="mailto:johnlawrencemissal@proton.me" style="color: #22d3ee; text-decoration: none; font-weight: 500;">johnlawrencemissal@proton.me</a>
+                                <a href="mailto:johnlawrencemissal@proton.me" style="color:    #a3f0b2; text-decoration: none; font-weight: 500;">johnlawrencemissal@proton.me</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +50,7 @@
                         <div class="info-icon"><i class="fa-solid fa-file-pdf"></i></div>
                         <div>
                             <div class="info-label">Resume</div>
-                            <div class="info-value"><a href="resume.pdf" target="_blank" style="color: #22d3ee; text-decoration: none; font-weight: 600;">View CV PDF</a></div>
+                            <div class="info-value"><a href="resume.pdf" target="_blank" style="color:    #a3f0b2; text-decoration: none; font-weight: 600;">View PDF</a></div>
                         </div>
                     </div>
                 </div>
@@ -93,13 +101,13 @@
 
                 <!-- Experience Sub-Tab -->
                 <div id="experience" class="resume-tab-content active">
-                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-briefcase" style="color: #22d3ee;"></i> Work Experience</h3>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-briefcase" style="color:    #a3f0b2;"></i> Work Experience</h3>
                     <p class="bio-text">Add your work experience, internships, or freelance work here.</p>
                 </div>
 
                 <!-- Education Sub-Tab -->
                 <div id="education" class="resume-tab-content">
-                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-graduation-cap" style="color: #22d3ee;"></i> Education Journey</h3>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-graduation-cap" style="color:    #a3f0b2;"></i> Education Journey</h3>
                     
                     <!-- Educational Journey Timeline -->
                     <div class="timeline-wrapper">
@@ -151,7 +159,7 @@
 
                 <!-- Skills Sub-Tab -->
                 <div id="skills" class="resume-tab-content">
-                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-code" style="color: #22d3ee;"></i> Skills & Tools</h3>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-code" style="color:    #a3f0b2;"></i> Skills & Tools</h3>
                     
                     <!-- Categorized Skills Layout -->
                     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -194,7 +202,7 @@
 
                 <!-- Hobbies Sub-Tab -->
                 <div id="hobbies" class="resume-tab-content">
-                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-heart" style="color: #22d3ee;"></i> Hobbies & Interests</h3>
+                    <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fa-solid fa-heart" style="color:    #a3f0b2;"></i> Hobbies & Interests</h3>
                     <p class="bio-text">Add what you like to do in your free time here.</p>
                 </div>
             </section>
@@ -358,10 +366,10 @@
                 localStorage.setItem('activeTab', tabId);
             }
 
-            // Controls when the mobile resume sub-bar appears
+            // Strictly show only on Resume tab for mobile
             const resumeNavbar = document.querySelector('.resume-navbar');
             if (resumeNavbar) {
-                if (tabId === 'resume') {
+                if (tabId === 'resume' && window.innerWidth <= 900) {
                     resumeNavbar.classList.add('mobile-show');
                 } else {
                     resumeNavbar.classList.remove('mobile-show');
@@ -371,15 +379,15 @@
 
         // On page load, check if a saved tab exists in localStorage
         window.addEventListener('DOMContentLoaded', () => {
-            const savedTab = localStorage.getItem('activeTab');
-            if (savedTab) {
-                const targetButton = Array.from(document.querySelectorAll('.nav-btn')).find(button => {
-                    return button.getAttribute('onclick').includes(`'${savedTab}'`);
-                });
-                
-                if (targetButton) {
-                    switchTab(savedTab, targetButton);
-                }
+            const savedTab = localStorage.getItem('activeTab') || 'about';
+            const targetButton = Array.from(document.querySelectorAll('.nav-btn')).find(button => {
+                return button.getAttribute('onclick').includes(`'${savedTab}'`);
+            });
+            
+            if (targetButton) {
+                switchTab(savedTab, targetButton);
+            } else {
+                switchTab('about', document.querySelector('.nav-btn'));
             }
         });
 
