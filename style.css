@@ -12,16 +12,20 @@ body {
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    padding: 2rem 1rem; 
+    padding: 1rem;  /* ✅ Reduced padding */
+    margin: 0;
+    overflow: hidden;  /* ✅ Prevent body scroll */
 }
-
 .container { 
-    max-width: 1200px; 
+    max-width: 1400px; 
     width: 100%; 
     display: grid; 
     grid-template-columns: 300px 1fr; 
     gap: 2rem; 
-    align-items: start; 
+    align-items: start;
+    height: 100vh;  /* ✅ Full viewport height */
+    overflow: hidden;  /* ✅ Prevent whole page scroll */
+    padding: 2rem 1rem;
 }
 
 /* Sidebar Styles */
@@ -34,8 +38,10 @@ body {
     flex-direction: column; 
     align-items: center; 
     text-align: center; 
-    height: fit-content; 
-    position: relative; 
+    height: calc(100vh - 4rem);  /* ✅ Full height minus padding */
+    position: sticky;  /* ✅ Stick in place */
+    top: 2rem;  /* ✅ Match container padding */
+    overflow-y: auto;  /* ✅ Scroll if content overflows */
 }
 
 .nav-toggle-btn { 
@@ -107,7 +113,7 @@ body {
 
 .info-icon { 
     width: 36px; 
-    height: 36px; 
+    height: 36px;
     background-color: #25252b; 
     border-radius: 10px; 
     display: flex; 
@@ -163,7 +169,9 @@ body {
     border-radius: 20px; 
     padding: 2rem; 
     width: 100%; 
-    overflow: hidden; 
+    height: calc(100vh - 4rem);  /* ✅ Full height minus padding */
+    overflow-y: auto;  /* ✅ Only this scrolls */
+    overflow-x: hidden;
 }
 
 .navbar { 
@@ -276,6 +284,7 @@ body {
 }
 
 .project-img { 
+    
     width: 100%; 
     height: 140px; 
     background-color: #2a2a30; 
@@ -552,56 +561,107 @@ body {
 
 .resume-nav-btn:hover, .resume-nav-btn.active { 
     color: #0f172a; 
-    background-color:       #bce5f5; 
+    background-color:       #aae0f5; 
     border-color:       #bce5f5; 
 }
 
 .resume-tab-content { 
-    display: none; 
+    display: none !important; 
 }
 
 .resume-tab-content.active { 
-    display: block; 
+    display: block !important; 
 }
 
+
+
+/* ======================================== */
+/* PORTFOLIO SUB-TAB STYLES (Separate) */
+/* ======================================== */
+
+.portfolio-navbar { 
+    display: flex; 
+    gap: 0.8rem; 
+    margin-bottom: 2rem; 
+    border-bottom: 1px solid #2a2a30; 
+    padding-bottom: 1rem; 
+    flex-wrap: wrap;
+}
+
+.portfolio-nav-btn { 
+    background: #23232a; 
+    border: 1px solid #2a2a30; 
+    color: #94a3b8; 
+    font-size: 0.85rem; 
+    font-weight: 600; 
+    padding: 0.5rem 1.2rem; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.portfolio-nav-btn:hover, 
+.portfolio-nav-btn.active { 
+    color: #0f172a; 
+    background-color:       #aae0f5; 
+    border-color: #bce5f5; 
+}
+
+.portfolio-tab-content { 
+    display: none !important; 
+}
+
+.portfolio-tab-content.active { 
+    display: block !important; 
+}
+
+/* Animation */
+#portfolio .portfolio-tab-content {
+    animation: fadeIn 0.3s ease;
+}
 /* Responsive Mobile Layout & Collapsibles */
-@media (max-width: 900px) {
-    
-    
-    
-   body{
-    
-    overflow:hidden;
-
-    padding:1rem !important;
-    min-height:auto !important;
-}
-
-
-    .container {
-        
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 100%;
-        gap: 1.5rem;
+@media (max-width: 1000px) {
+    body {
+        overflow: auto !important;
+        padding: 0rem 0rem !important;
+        min-height: 100vh !important;
+        height: auto !important;
+        align-items: flex-start !important;
     }
 
+    .container {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 1rem !important;
+        height: 0vh !important;
+        overflow: visible !important;
+        padding: 0rem 0rem !important;
+    }
+
+    /* ===== SIDEBAR - Horizontal layout ===== */
     .sidebar {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: wrap !important;
         align-items: center !important;
         justify-content: flex-start !important;
-        padding: 1rem !important;
-        gap: 1rem !important;
-        position: relative !important;
+        padding: 0.8rem !important;
+        gap: 0.6rem !important;
+        position: fixed !important;
         width: 100% !important;
+        height: 1000vh !important;
+        min-height: auto !important;
+        position: relative !important;
+        top: auto !important;
+        overflow: visible !important;
+        border-radius: 16px !important;
     }
 
     .profile-img {
-        width: 65px !important;
-        height: 65px !important;
+        width: 50px !important;
+        height: 50px !important;
         margin-bottom: 0 !important;
         border-radius: 12px !important;
         flex-shrink: 0 !important;
@@ -611,25 +671,34 @@ body {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        gap: 0.3rem !important;
+        gap: 0.2rem !important;
         flex: 1 !important;
+        min-width: 0 !important;
     }
 
     .name {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
         margin-bottom: 0 !important;
         text-align: left !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        max-width: 150px !important;
     }
 
     .role-badge {
-        font-size: 0.75rem !important;
+        font-size: 0.65rem !important;
+        padding: 0.15rem 0.6rem !important;
     }
 
     .nav-toggle-btn {
         position: absolute !important;
-        top: 1rem !important;
-        right: 1rem !important;
+        top: 0.6rem !important;
+        right: 0.6rem !important;
         display: flex !important;
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.7rem !important;
     }
 
     .divider { 
@@ -638,93 +707,217 @@ body {
 
     .collapse-content { 
         display: none !important; 
-        width: 100% !important; 
+        width: 100% !important;
+        flex-basis: 100% !important;
     }
 
     .collapse-content.show { 
         display: block !important; 
         width: 100%;
         margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid #2a2a30;
     }
 
-    .main-content{
-    height: calc(100vh - 330px);
-    overflow-y: auto;
-    overflow-x: auto;
-    padding: 1.5rem 1rem;
-}
+    .info-list {
+        gap: 0.6rem !important;
+        margin: 0.3rem 0 !important;
+    }
 
-    /* Main bottom bar */
+    .info-item {
+        gap: 0.6rem !important;
+    }
+
+    .info-icon {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.75rem !important;
+    }
+
+    .info-label {
+        font-size: 0.6rem !important;
+    }
+
+    .info-value {
+        font-size: 0.75rem !important;
+    }
+
+    .social-links {
+        gap: 0.4rem !important;
+        margin-top: 0.5rem !important;
+        justify-content: center !important;
+    }
+
+    .social-links a {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+        height: auto !important;
+        min-height: calc(100vh - 280px) !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        padding: 1rem !important;
+        border-radius: 16px !important;
+        padding-bottom: 0rem  9rem !important;
+    }
+
+    /* ===== TOP NAVBAR (Bottom on mobile) ===== */
     .navbar {
-
-        
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
-
         display: flex !important;
-        position: fixed;
-        bottom: 0px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 95%;
-        max-width: 420px;
-        background-color: rgba(26, 26, 30, 0.95);
-        backdrop-filter: blur(10px);
-        border: 1px solid #2a2a30;
-        border-radius: 30px;
-        padding: 0.8rem 1rem;
+        justify-content: center !important;
+        align-items: center !important;
+        position: fixed !important;
+        bottom: 0px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(105% - 20px) !important;
+        max-width: 400px !important;
+        background-color: rgba(26, 26, 30, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 1px solid #2a2a30 !important;
+        border-radius: 30px !important;
+        padding: 0.5rem 0.7rem !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
-        padding-left: 16px;
-padding-right: 16px;
-        -webkit-overflow-scrolling: touch;
-        white-space: nowrap !important;
-        gap: 1.2rem;
-        z-index: 1000;
+        gap: 0.8rem !important;
+        z-index: 1000 !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+        scrollbar-width: none !important;
     }
-    .navbar::-webkit-scrollbar { display: none; }
-    .navbar.show-dropdown { display: flex !important; }
-    .navbar .nav-btn { 
-        font-size: 0.85rem; 
-        padding-bottom: 0; 
-        border-bottom: none !important; 
+    .navbar::-webkit-scrollbar { display: none !important; }
+    
+    .navbar .nav-btn {
+        font-size: 1rem !important;
+        padding: 0rem 0rem !important;
+        border-bottom: none !important;
         flex: 0 0 auto !important;
         white-space: nowrap !important;
+        font-weight: 900 !important;
     }
-    .navbar .nav-btn.active { color:       #bce5f5; }
+    .navbar .nav-btn.active { 
+        color: #92e3f4 !important;
+        border-bottom: 2px solid #fdfeff !important;
+        padding-bottom: 0.2rem !important;
+    }
 
-    /* Resume sub-bar */
+    /* ===== RESUME SUB-NAVBAR (Mobile) ===== */
     .resume-navbar {
         display: none !important;
         position: fixed !important;
         bottom: 80px !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
-        width: 95% !important;
-        max-width: 400px !important;
+        width: calc(100% - 30px) !important;
+        max-width: 380px !important;
         background-color: rgba(26, 26, 30, 0.95) !important;
         backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
         border: 1px solid #2a2a30 !important;
-        border-radius: 20px !important;
-        padding: 0.5rem 0.8rem !important;
+        border-radius: 16px !important;
+        padding: 0.4rem 0.6rem !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         overflow-x: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        white-space: nowrap !important;
-        gap: 0.6rem !important;
+        gap: 0.4rem !important;
         z-index: 999 !important;
         margin-bottom: 0 !important;
+        scrollbar-width: none !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
     }
-    .resume-navbar::-webkit-scrollbar { display: none; }
+    .resume-navbar::-webkit-scrollbar { display: none !important; }
     .resume-navbar.mobile-show { display: flex !important; }
+    
     .resume-nav-btn {
-        font-size: 0.7rem !important;
-        padding: 0.4rem 0.8rem !important;
+        font-size: 0.9rem !important;
+        padding: 0.1rem 0.2rem !important;
         border-radius: 8px !important;
         flex: 0 0 auto !important;
         white-space: nowrap !important;
     }
 
-    .stats-grid, .form-group { grid-template-columns: 1fr; }
+    /* ===== PORTFOLIO SUB-NAVBAR (Mobile) ===== */
+     .portfolio-navbar {
+        display: none !important;
+        position: fixed !important;
+        bottom: 80px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: calc(100% - 30px) !important;
+        max-width: 380px !important;
+        background-color: rgba(26, 26, 30, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border: 1px solid #2a2a30 !important;
+        border-radius: 16px !important;
+        padding: 0.4rem 0.6rem !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        gap: 0.4rem !important;
+        z-index: 999 !important;
+        margin-bottom: 0 !important;
+        scrollbar-width: none !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+    }
+    .portfolio-navbar::-webkit-scrollbar { display: none !important; }
+    .portfolio-navbar.mobile-show { display: flex !important; }
+    
+    .portfolio-nav-btn {
+        font-size: 0.9rem !important;
+        padding: 0.1rem 0.2rem !important;
+        border-radius: 8px !important;
+        flex: 0 0 auto !important;
+        white-space: nowrap !important;
+    }
+
+    /* ===== OTHER ELEMENTS ===== */
+    .stats-grid, 
+    .form-group { 
+        grid-template-columns: 1fr !important; 
+    }
+
+    .section-title {
+        font-size: 1.5rem !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .timeline-header {
+        flex-direction: column !important;
+        gap: 0.3rem !important;
+    }
+
+    .timeline-title {
+        font-size: 1rem !important;
+    }
+
+    .timeline-date {
+        font-size: 0.75rem !important;
+        white-space: normal !important;
+    }
+
+    .stat-number {
+        font-size: 1.4rem !important;
+    }
+
+    /* ===== MODAL FIXES ===== */
+    .modal-box {
+        padding: 1.5rem !important;
+        margin: 1rem !important;
+    }
+
+    .modal-title {
+        font-size: 1.1rem !important;
+    }
+
+    /* ===== EXTRA PADDING FOR SUB-NAVBAR ===== */
+
 }
