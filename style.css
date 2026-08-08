@@ -17,10 +17,25 @@ body {
     overflow: hidden;  /* ✅ Prevent body scroll */
 }
 .container { 
-    max-width: 1400px; 
+
+
+
+    .layout {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Find the container that holds sidebar + main content */
+.container
+
+    max-width: 95%; 
     width: 100%; 
     display: grid; 
-    grid-template-columns: 300px 1fr; 
+
+    grid-template-columns: minmax(200px, 30%) 1fr;
+
     gap: 2rem; 
     align-items: start;
     height: 100vh;  /* ✅ Full viewport height */
@@ -41,8 +56,15 @@ body {
     height: calc(100vh - 4rem);  /* ✅ Full height minus padding */
     position: sticky;  /* ✅ Stick in place */
     top: 2rem;  /* ✅ Match container padding */
-    overflow-y: auto;  /* ✅ Scroll if content overflows */
+    overflow-y: auto;  /* ✅ Only this scrolls */
+
+   
 }
+
+    
+
+
+
 
 .nav-toggle-btn { 
     display: none; 

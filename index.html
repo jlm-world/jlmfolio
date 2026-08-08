@@ -44,7 +44,9 @@
                         <div>
                             <div class="info-label">Email</div>
                             <div class="info-value">
-                                <a href="mailto:johnlawrencemissal@proton.me" style="color:       #bce5f5; text-decoration: none; font-weight: 500;">johnlawrencemissal@proton.me</a>
+                                <a href="mailto:johnlawrencemissal@proton.me" style="color:       #bce5f5; text-decoration: none; font-weight: 500;"  title="EMAIL ME 😄">johnlawrencemissal@proton.me</a>
+
+                                
                             </div>
                         </div>
                     </div>
@@ -71,10 +73,10 @@
         <main class="main-content">
             <!-- Navigation Links -->
             <nav class="navbar show-dropdown" id="navLinks">
-                <button class="nav-btn active" onclick="switchTab('about', this)">About</button>
+                <button class="nav-btn active" onclick="switchTab('about', this)">About Me</button>
                 <button class="nav-btn" onclick="switchTab('resume', this)">Resume</button>
                 <button class="nav-btn" onclick="switchTab('portfolio', this)">Portfolio</button>
-                <button class="nav-btn" onclick="switchTab('contact', this)">Contact</button>
+                <button class="nav-btn" onclick="switchTab('contact', this)">Connect</button>
                 <button class="nav-btn" onclick="switchTab('gallery', this)">Gallery</button>
             </nav>
 
@@ -251,6 +253,63 @@
                 </div>
             </div>
 
+
+             <div class="project-card" onclick="window.open('https://jlmfolio.vercel.app/','_blank')" style="cursor:pointer;">
+                <div class="project-img"> 
+                    <img src="Assets/jlm.png" alt="Project" style="width:100%;height:140px;object-fit:cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-url">jlmfolio.vercel.app</div>
+                    <h3 class="project-title">J.L.M Portfolio</h3>
+                    <p class="project-desc">My Personal Portfolio</p>
+                </div>
+            </div>
+
+             <div class="project-card" onclick="window.open('https://jlmfolio.vercel.app/','_blank')" style="cursor:pointer;">
+                <div class="project-img"> 
+                    <img src="Assets/jlm.png" alt="Project" style="width:100%;height:140px;object-fit:cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-url">jlmfolio.vercel.app</div>
+                    <h3 class="project-title">J.L.M Portfolio</h3>
+                    <p class="project-desc">My Personal Portfolio</p>
+                </div>
+            </div>
+
+             <div class="project-card" onclick="window.open('https://jlmfolio.vercel.app/','_blank')" style="cursor:pointer;">
+                <div class="project-img"> 
+                    <img src="Assets/jlm.png" alt="Project" style="width:100%;height:140px;object-fit:cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-url">jlmfolio.vercel.app</div>
+                    <h3 class="project-title">J.L.M Portfolio</h3>
+                    <p class="project-desc">My Personal Portfolio</p>
+                </div>
+            </div>
+
+
+             <div class="project-card" onclick="window.open('https://jlmfolio.vercel.app/','_blank')" style="cursor:pointer;">
+                <div class="project-img"> 
+                    <img src="Assets/jlm.png" alt="Project" style="width:100%;height:140px;object-fit:cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-url">jlmfolio.vercel.app</div>
+                    <h3 class="project-title">J.L.M Portfolio</h3>
+                    <p class="project-desc">My Personal Portfolio</p>
+                </div>
+            </div>
+
+             <div class="project-card" onclick="window.open('https://jlmfolio.vercel.app/','_blank')" style="cursor:pointer;">
+                <div class="project-img"> 
+                    <img src="Assets/jlm.png" alt="Project" style="width:100%;height:140px;object-fit:cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-url">jlmfolio.vercel.app</div>
+                    <h3 class="project-title">J.L.M Portfolio</h3>
+                    <p class="project-desc">My Personal Portfolio</p>
+                </div>
+            </div>
+
             <div class="project-card" onclick="window.open('https://jlmfolio.vercel.app/','_blank')" style="cursor:pointer;">
                 <div class="project-img"> 
                     <img src="Assets/jlm.png" alt="Project" style="width:100%;height:140px;object-fit:cover;">
@@ -294,17 +353,23 @@
 
             <!-- Contact Tab -->
             <section id="contact" class="tab-content">
-                <h2 class="section-title">Get in Touch</h2>
-                <form class="contact-form" action="https://formsubmit.co/johnlawrencemissal@gmail.com" method="POST">  
-                    <div class="form-group">
-                        <input type="text" class="form-input" placeholder="Your Name" required>
-                        <input type="email" class="form-input" placeholder="Your Email" required>
-                    </div>
-                    <input type="text" class="form-input" placeholder="Subject">
-                    <textarea class="form-textarea" rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
-            </section>
+    <h2 class="section-title">Get in Touch</h2>
+    <form class="contact-form" action="https://formsubmit.co/johnlawrencemissal@gmail.com" method="POST">  
+        <div class="form-group">
+            <input type="text" class="form-input" name="name" placeholder="Your Name" required>
+            <input type="email" class="form-input" name="email" placeholder="Your Email" required>
+        </div>
+        
+        <!-- FormSubmit Options -->
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New Message from J.L.M Portfolio" />
+        <input type="hidden" name="_autoresponse" value="Thanks for reaching out! I'll get back to you soon." />
+        
+        <input type="text" class="form-input" name="subject" placeholder="Subject">
+        <textarea class="form-textarea" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+</section>
 
             <!-- Gallery Tab -->
             <section id="gallery" class="tab-content">
